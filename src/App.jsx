@@ -8,19 +8,21 @@ import Login from './Components/Login/Login';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 
 import InstantConsultation from './components/InstantConsultation/InstantConsultation';  
+import Notification from './components/Notification/Notification';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing_Page />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Sign_Up />} />
-          
-          <Route path="/instant-consultation" element={<InstantConsultation />} />
-        </Routes>
+        <Notification>
+          <Routes>
+            <Route path="/" element={<Landing_Page />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Sign_Up />} />
+            <Route path="/instant-consultation" element={<InstantConsultation />} />
+            <Route path="/notifications" element={<Notification />} />
+          </Routes>
+        </Notification>
       </BrowserRouter>
     </div>
   );
