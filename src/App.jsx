@@ -7,8 +7,8 @@ import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Login from './Components/Login/Login';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 
-import InstantConsultation from './components/InstantConsultation/InstantConsultation';  
-import Notification from './components/Notification/Notification';
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';  
+import Notification from './Components/Notification/Notification';
 
 function App() {
   return (
