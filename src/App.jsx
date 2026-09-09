@@ -8,7 +8,7 @@ import Login from './Components/Login/Login';
 import Sign_Up from './Components/Sign_Up/Sign_Up';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';  
 import Notification from './Components/Notification/Notification';
-import ReviewForm from './Components/ReviewForm/ReviewForm';
+import GiveReviews from './Components/GiveReviews/GiveReviews';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 import ProfileCard from './Components/ProfileCard/ProfileCard';
 
@@ -24,7 +24,7 @@ function App() {
             <Route path="/signup" element={<Sign_Up />} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/notifications" element={<Notification />} />
-            <Route path="/reviews" element={<ReviewForm />} />
+            <Route path="/reviews" element={<GiveReviews />} />
             <Route path="/reports" element={<ReportsLayout />} />
             <Route 
               path="/profile-card" 
