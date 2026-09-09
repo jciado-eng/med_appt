@@ -1,0 +1,155 @@
+.reviews-container {
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.reviews-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.reviews-table th, 
+.reviews-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: left;
+}
+
+.reviews-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+}
+
+.feedback-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.feedback-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.review-given-cell {
+  border: 2px solid #dc3545 !important; 
+  min-width: 150px;
+  background-color: #fffafaf2;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.review-form {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.review-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.review-form div {
+  margin-bottom: 16px;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.review-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.rating-btn {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rating-btn.active {
+  background: #ffc107;
+  border-color: #ffb300;
+  color: #333;
+  font-weight: bold;
+}
+
+.warning {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
