@@ -9,6 +9,8 @@ import Sign_Up from './Components/Sign_Up/Sign_Up';
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';  
 import Notification from './Components/Notification/Notification';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
+import ProfileCard from './Components/ProfileCard/ProfileCard';
 
 function App() {
   return (
@@ -23,6 +25,16 @@ function App() {
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/notifications" element={<Notification />} />
             <Route path="/reviews" element={<ReviewForm />} />
+            <Route path="/reports" element={<ReportsLayout />} />
+            <Route 
+              path="/profile-card" 
+              element={
+                <ProfileCard 
+                  userName={sessionStorage.getItem("name") || "Peter"} 
+                  onLogout={handleLogoutPlaceholder} 
+                />
+              } 
+            />
           </Routes>
         </Notification>
       </BrowserRouter>
