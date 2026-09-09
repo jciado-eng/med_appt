@@ -1,12 +1,36 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const email = sessionStorage.getItem("email");
+    const name = sessionStorage.getItem("name");
+    const token = sessionStorage.getItem("auth-token");
+
+    if (email || token) {
+      setIsLoggedIn(true);
+      setUserName(name || email.split('@')[0]);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
 
   const handleClick = () => {
     setIsActive(!isActive);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.clear();
+    setIsLoggedIn(false);
+    setUserName("");
+    navigate("/");
+    window.location.reload();
   };
 
   return (
@@ -39,23 +63,39 @@ const Navbar = () => {
         <li className="link">
           <Link to="/instant-consultation">Appointments</Link>
         </li>
-        {/* Nuova voce di menu inserita per le recensioni */}
         <li className="link">
           <Link to="/reviews">Reviews</Link>
         </li>
-        <li className="link">
-          <Link to="/signup">
-            <button className="btn1">Sign Up</button>
-          </Link>
-        </li>
-        <li className="link">
-          <Link to="/login">
-            <button className="btn1">Login</button>
-          </Link>
-        </li>
+
+        {isLoggedIn ? (
+          <>
+            <li className="link welcome-text">
+              Welcome, {userName}
+            </li>
+            <li className="link">
+              <button className="btn1 logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="link">
+              <Link to="/signup">
+                <button className="btn1">Sign Up</button>
+              </Link>
+            </li>
+            <li className="link">
+              <Link to="/login">
+                <button className="btn1">Login</button>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );
 };
 
 export default Navbar;
+
